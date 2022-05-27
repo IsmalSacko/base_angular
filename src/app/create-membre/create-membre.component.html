@@ -1,0 +1,56 @@
+<div class="container">
+  <div style="margin: auto; width: 50%">
+    <div>
+      <h2 class="mt-4 text-info">Ajouter un membre ici !</h2>
+      <form #membre="ngForm" (ngSubmit)="createMembre(membre.value)">
+        <div class="md-form">
+
+          <label>Nom</label>
+          <input type="text" name="nom" class="form-control" ngModel="">
+        </div>
+
+        <div class="md-form">
+          <label>Ville</label>
+          <input type="text" name="ville" class="form-control" ngModel="">
+        </div>
+
+        <div class="md-form">
+          <label>Age</label>
+          <input type="number" name="age" class="form-control" ngModel="">
+        </div>
+        <br>
+        <div class="col-sm-2 mx-auto">
+          <button class="btn btn-primary btn-block  rounded-pill">Valider</button>
+        </div>
+      </form>
+    </div>
+    <div>
+
+      <h2 class="mt-4 text-info">Formulaire pré-rempli !</h2>
+      <form #newFembre="ngForm" (ngSubmit)="prerempliform()">
+        <div class="md-form">
+          <p class="text-danger" [hidden]="nomAction.valid">Saisir votre nom</p>
+          <label>Nom</label>
+          <input type="text" name="nom" class="form-control" required [(ngModel)]="user.name" #nomAction="ngModel">
+        </div>
+
+        <div class="md-form">
+          <p class="text-danger" [hidden]="villeAction.valid">Saisir votre ville</p>
+          <label>Ville</label>
+          <input type="text" name="ville" class="form-control" required [(ngModel)]="user.ville" #villeAction="ngModel">
+        </div>
+
+        <div class="md-form">
+          <p class="text-danger" [hidden]="ageAction.valid">Saisir votre âge</p>
+          <label>Age</label>
+          <input type="number" name="age" class="form-control" required [(ngModel)]="user.age" #ageAction="ngModel">
+        </div>
+        <br>
+        <div class="col-sm-2 mx-auto mb-5 ">
+          <button class="btn btn-primary btn-block  rounded-pill">Valider</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+.ng-valid[required]{
+  border-right: 4px solid green !important;
+}
+.ng-invalid[required]{
+  border-right: 4px solid tomato !important;
+}

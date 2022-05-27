@@ -1,0 +1,46 @@
+<div class="container mt-4  card">
+  <h1 class="text-warning text-center">Liste des membres du {{toDay | date:'d/M/y'}}</h1>
+  <div class="">
+    <table class="table table-success table-striped">
+      <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Âge</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let m of membres">
+        <th>{{ m.name }}</th>
+        <th>{{ m.age }}</th>
+
+      </tr>
+      </tbody>
+    </table>
+    <br>
+    <div class="div">
+      <div class="row" *ngIf="visible">
+        <div class="col-sm-6">
+          <p class="grey-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque cupiditate delectus earum et ex excepturi
+            fuga, fugiat nobis soluta vel.
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p class="grey-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque cupiditate delectus earum et ex excepturi
+            fuga, fugiat nobis soluta vel.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" *ngIf="!visible">
+      <button class="btn btn-primary" (click)="showOrHide()">Afficher</button>
+    </div>
+    <div class="text-center" *ngIf="visible">
+      <button class="btn btn-danger" (click)="showOrHide()">Cacher</button>
+    </div>
+  </div>
+</div>
+
